@@ -47,13 +47,13 @@
 </form>
 <br><b>Lo más probable es que hayas elegido la B o la C, si has elegido la A cambiala porque no te lo crees ni tu.</b>
 <br>
-<hr width=30% size=5 color="black">
+<hr width=30% size=5 color="black" aling="left">
 <br><b>Ahora imagina que tu sueño se hace realidad, día del profesor con pistola, elige un alumno e el que gastar la bala.</b>
 <br><textarea maxlength="15" size="15">
 </textarea>
 <br><b>Bueno me supongo que el afortunado será Adahi y si no es él replanteatelo y cambialo.</b>
 <br>
-<hr width=30% size=5 color="black">
+<hr width=30% size=5 color="black" aling="left">
 <br><b>¿Cuántas averias ha tenido tu precioso BMW?</b>
 <br><input type="radio" name="1ºpregunta" valor="1ºpregunta">A.Ninguna, los alemanes no fallan
 <br><input type="radio" name="1ºpregunta" valor="1ºpregunta">B.1-2 Ha sufrido alguna no muy grave.
@@ -62,8 +62,64 @@
 <br><b>Me supongo que la elegida es la B o la C, ahora te voy a citar dos de ellas: perdida de aceite(como todo buen BMW). La segunda es el turbo que falló por ir como el Jhonan de Baraka.</b>
 <br><b>A esto hay que sumar los cambios de ruedas por derrapar en las rotondas.</b>
 <br>
-<hr width=30% size=5 color="black">
+<hr width=30% size=5 color="black" aling="left">
 <br><b>A qui termina este formulario, espero haber acertado todas y te hayas hechado una risas. Buenas tarde o noches o cuando leas esto.</b>
 
 <hr width=100% size=5 color="black">
 </body>
+<FRAMESET rows=50%>
+    <head>
+        <meta charset="utf-8" />
+        <title>HTML5 Pacman</title>
+        
+        <style type="text/css">
+        @font-face {
+            font-family: 'BDCartoonShoutRegular';
+            src: url('BD_Cartoon_Shout-webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        #pacman {
+            height:450px;
+            width:342px;
+            margin:20px auto;
+        }
+        #shim { 
+            font-family: BDCartoonShoutRegular; 
+            position:absolute;
+            visibility:hidden
+        }
+        h1 { font-family: BDCartoonShoutRegular; text-align:center; }
+        body { width:342px; margin:0px auto; font-family:sans-serif; }
+        a { text-decoration:none; }
+        </style>
+
+    </head>
+
+    <body>
+    
+    <div id="shim">shim for font face</div>
+
+    <h1>HTML5 Pacman</h1>
+
+    <a href="http://arandomurl.com/">Writeup</a> |
+    Code on <a href="http://arandomurl.com/">Github</a>
+
+    <div id="pacman"></div>
+    <script src="pacman.js"></script>
+    <script src="modernizr-1.5.min.js"></script>
+
+    <script>
+
+        var el = document.getElementById("pacman");
+
+        if (Modernizr.canvas && Modernizr.localstorage && 
+            Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
+        window.setTimeout(function () { PACMAN.init(el, "./"); }, 0);
+        } else { 
+        el.innerHTML = "Sorry, needs a decent browser<br /><small>" + 
+            "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
+        }
+    </script>
+    </body>
+    </FRAMESET>
